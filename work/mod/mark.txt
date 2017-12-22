@@ -1,0 +1,25 @@
+0 O版 1 D版 2 Q版
+
+修改:
+files/patch/main_c/container.dat ->
+	card.csv
+	skill.csv
+
+	BOSS替换:
+	costume.csv.txt
+		惠惠和斋藤一的ID注释互换
+	enemy.csv
+		惠惠和暴食龙 ID互换
+	enemy_party.csv
+		修改场景缩放: 暴食龙相关条目placement_emt_001替换为placement_ems_034
+	enemy_party_hint.csv
+		惠惠和暴食龙 相关ID互换
+	skill_role_enemy.csv
+		惠惠和暴食龙共用一套roleID，从日服复制到国服
+
+增加:
+files/patch/main_c/chr
+	chr_ems_03401_mdl.dat
+	chr_ems_03401_txt.dat
+
+

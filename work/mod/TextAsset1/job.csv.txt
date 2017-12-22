@@ -1,0 +1,7 @@
+#ジョブタイプ,名前,アーサータイプ,パッシブスキルID,
+#,
+MERCENARY,佣兵,MERCENARY,1,
+MILLIONAIRE,富豪,MILLIONAIRE,1,
+THIEF,侠客,THIEF,1,
+SINGER,歌姬,SINGER,1,
+NULL,？？？,NULL,1,

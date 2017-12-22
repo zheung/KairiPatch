@@ -1,0 +1,2 @@
+cv_arthur_390.cpk,EASY_BATTLE_VOICE,0,0.5,0,
+cv_tb_1032.cpk,TEAMBATTLE_VOICE,0,0.5,0,

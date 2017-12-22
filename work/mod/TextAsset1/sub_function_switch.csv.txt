@@ -1,0 +1,5 @@
+#MODULE_SWITCH 的 key 一般问程序拿,设置上面的文字描述,
+STRATEGY_BOSS,图文/视频攻略,
+HANDBOOK_LIKE,卡牌评论（图鉴）,
+STRATEGY_BUTTON,攻略（主界面）,
+ACTIVITY_COLLECTION,每期活动集锦,

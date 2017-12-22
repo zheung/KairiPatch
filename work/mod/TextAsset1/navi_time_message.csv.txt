@@ -1,0 +1,3 @@
+6:00,10:00,time_message,0,
+22:00,2:00,time_message,1,
+

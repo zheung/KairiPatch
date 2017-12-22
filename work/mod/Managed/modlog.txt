@@ -1,0 +1,47 @@
+o// PatchSystem.onRecv_PatchList
+	byte[] array2 = File.ReadAllBytes(FileLoader.INSTALL_DIR + "cata.dat");
+	Array.Resize<byte>(ref array, array.Length + array2.Length);
+	array2.CopyTo(array, array.Length - array2.Length);
+	File.WriteAllBytes(FileLoader.INSTALL_DIR + "catalog.txt", array);
+
+// FileLoader.removeGabageFiles
+	//del
+	int count2 = list.Count;
+	for (int k = 0; k < count2; k++)
+	{
+		File.Delete(list[k]);
+	}
+
+// CPKMgr.onCsvDownloadEndCB
+	string stringData = request.GetStringData() + System.IO.File.ReadAllText(FileLoader.INSTALL_DIR + "cpk_file.txt");
+	this.writeCsv(request.GetStringData());
+// CPKMgr. onPatchTextDownloadEndCB
+	string stringData = request.GetStringData() + System.IO.File.ReadAllText(FileLoader.INSTALL_DIR + "cpk_patch.txt");
+	if (!string.IsNullOrEmpty(stringData))
+	{
+		this.m_new_version_info_list = this.createVersionInfoList(stringData);
+		this.m_local_version_info_list = this.createVersionInfoList(stringData);
+		this.writeVersionInfo(this.createVersionInfoList(request.GetStringData()));
+	}
+// CPKMgr.loadCsv
+	string arg_7A_0 = streamReader.ReadToEnd() + File.ReadAllText(FileLoader.INSTALL_DIR + "cpk_file.txt");
+// CPKMgr.loadLocalVersionInfoList
+	string patch_str = expr_46.ReadToEnd() + File.ReadAllText(FileLoader.INSTALL_DIR + "cpk_patch.txt");
+// CPKMgr.deleteCPKFile
+	//del
+	File.Delete(this.getInstallCpkPath(cpk_name));
+// OnLoadCpkData
+	string text = request.GetStringData() + File.ReadAllText(FileLoader.INSTALL_DIR + "cpk_file.txt");
+// OnLoadCPKPatch
+	string text = request.GetStringData() + File.ReadAllText(FileLoader.INSTALL_DIR + "cpk_patch.txt");
+	
+// Log
+	System.IO.File.AppendAllText(FileLoader.INSTALL_DIR + "ErrLog.txt", message.ToString() + "\r\n");
+
+// LocalPathchMgr.installPatchFileVer
+	//del
+	string updatePatchFilePath = this.getUpdatePatchFilePath(@string);
+	if (File.Exists(updatePatchFilePath))
+	{
+		File.Delete(updatePatchFilePath);
+	}
