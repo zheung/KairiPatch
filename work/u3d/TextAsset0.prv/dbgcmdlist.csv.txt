@@ -1,0 +1,111 @@
+#デバッグコマンド一覧
+#'#'でコメント行、','が区切り
+#コマンド名,コマンド,パラメータ説明
+#SVコマンド
+AP追加,/addap <ap_add>,ap_add:AP
+BP追加,/addbp <bp_add>,bp_add:BP
+pvp用スタミナ全回復,/addpvpfull,
+ゴールド追加,/addgold <gold_add>,gold_add:ゴールド
+友情ポイント追加,/addfp <fp_add>,fp_add:友情ポイント
+課金コイン追加,/addcoin <coin_add> [<market>] [<is_free>],coind_add:課金コイン market:マーケット(apple/google/sqex)。省略で無償無保証コインを追加する is_free:無償分か(1=無償 0=有償)。省略すると有償分。
+経験値追加,/addexp <exp_add>,exp_add:経験値
+レベル設定,/setlv <set_lv>,set_lv:レベル
+カード追加,/addcard <cardid> [<num>] [<lv>] [<skill_lv>] [<fame>] [<love>],cardid:カードID num:数 lv:レベル skill_lv:スキルレベル fame:名声 love:忠誠度
+カード削除,/delcard <cardid>,cardid:カードID
+スフィア追加,/addsphr <sphrid>,sphrid:スフィアID
+アイテム追加,/additem <itemid> [<num>],itemid:アイテムID num:数
+コスチューム追加,/addcostume <costumeid>,costumeid:コステュームID
+アバターパーツ追加,/addavatarparts <avatar_partsid>,avatar_partsid:アバターパーツID
+シリーズのアバターパーツ追加,/addseries <seriesid>,seriesid:シリーズID
+スタンプ追加,/addstamp <stampid>,stampid:スタンプID
+イベントアイテム交換数クリア,/eventshopbuyclear <event_shop_lineupid>,event_shop_lineupid:イベントショップラインアップID
+キャッシュ削除,/cachedel <type>,type:キャッシュタイプ
+デイリーランキングスコアの更新,/ranking_daily <score>,score:スコア
+禁止語句確認テスト,/word_censor <word>,word=確認する文字列
+プレミアムグレード設定,/premium_service <grade>,grade=0:無課金者 grade=1~4:課金者
+ログインボーナス再取得,/loginbonus_again,次の日のログインボーナスを取得
+ログインボーナス回数変更,/setloginbonus <num>,num:受け取り日数
+初心者ログインボーナスID変更,/setloginbonus_beginnerid <beginnerid>,初心者ログインボーナスID(login_bonus_beginner.xls)
+クエストクリア,/clearquest <questid>,questid:クリアするクエストID(又はALL)
+クエスト全クリア(メニューロック全解除),/clearquest ALL,
+セッションキー期限切れ,/cachedel session,
+メンテ告知状態,/mainte <mainte_sec>,maite_sec:メンテ告知状態秒数
+メンテ告知状態解除,/maintereset,
+プレイログ使用履歴削除,/deluseplayloghistory userid,userid=(0or省略で全て)
+チームバトルエネミー強制出現,/teambattlebosspop <groupid>,groupid:グループID(空ならリセット)
+ステージクエスト強制出現,/stagequestpop <scheduleid>,scheduleid:スケジュールID
+
+#CLコマンド(BattleAPI)
+ユーザーのHP変更,!sethp <hp>,hp:HP
+ユーザーのHP全快,!medic,
+敵を倒す,!kill <index>,index:番号(0～2)
+勝利,!win,
+敗北,!lose,
+無敵になる,!muteki 1,
+
+#CLコマンド
+システム時間速度変更,gamespeed <speed>,speed:0.0～
+シーン変更,scene <name>,name:シーン名
+BGM変更,bgm <id>,id:BGMID(-1で再生停止)
+BGMマスター音量変更,bgm_vol <vol>,vol:音量(0.0～1.0)
+SE再生,se <id>,id:SEID
+SEマスター音量変更,se_vol <vol>,vol:音量(0.0～1.0)
+ボイス再生,voice <id>,id:ボイスID
+ボイスマスター音量変更,voice_vol <vol>,vol:音量(0.0～1.0)
+CPK関連初期化(CPK関連ファイル全削除等),cpk_init,
+CPKファイルバインド,cpk_bind <set_name_idx> <name> <storage_type>,set_name_idx:CPKバインダーセット名番号(0:Sound) name:cpkファイル名 storage_type:ストレージタイプ(0:StreamingAssets 1:Install)
+CPKファイルアンバインド,cpk_unbind <name>,name:cpkファイル名
+CPKファイル全アンバインド,cpk_unbind_all,
+CPKファイルダウンロード,cpk_download <name>,name:cpkファイル名
+CPKファイル全ダウンロード,cpk_download_all,
+CPKファイル存在チェック,cpk_exist <name>,name:cpkファイル名
+CPKファイル削除,cpk_delete <name>,name:cpkファイル名
+CPKファイルCSV情報出力,cpk_csv_grep,
+CPKファイルバージョン情報出力,cpk_version_grep,
+インストール済みCPKファイル情報出力,cpk_install_grep,
+バインド済みCPKファイル情報出力,cpk_bind_grep,
+スクリプター実行,scr <path>,path:ファイルパス
+ストーリースクリプト実行,story_scr <id> <part> <main>,id:ID part:パート main:メインフラグ(未入力or0以外でメイン)
+NPCイベント実行,npc_event <event_type> <script_name> <id>,event_type:0=STORYBATTLE,1=MINISTORY_BATTLE,2=MINISTORY_STAGEQUEST script_name:スクリプト名 id:NPCイベントID
+Webページオープン,web <url>,url:URL
+WebページJS呼び出し,evaluateJS <js>,js:JavaScriptコード
+進化合成に必要なカード取得,evo_card <id> [<num>],id:進化させるカードID num:何回分か
+アーサーデッキ追加,add_deck_arthur <id>, id:1~4 傭兵、富豪、盗賊、歌姫
+指定アーサーのカード全取得,add_card_arthur <id> <num> <lv> <fame> <love>, id:0~4 育、傭、富、盗、歌 num:数 lv:レベル fame:名声 love:忠誠度
+指定名称を含むカード全取得,add_card_name <name>,name:カード名称、指定無しならば全て
+指定スキルのカード全取得,add_card_skill <id>,id=スキルID
+指定スキル機能のカード全取得,add_card_skill_role <id>,id=スキル機能ID
+指定レアリティのカード全取得,add_card_rarity <rarity>,rarity=カードレアリティ NORMAL(1)～MILLIONRARE(6)
+カード詳細画面に表示中のカードを取得する,add_card_detail,※カードコレクションやガチャ画面など可
+全てのカードレベル設定,card_lv <lv>, lv:レベル
+全てのカード名声設定,card_fame <fame>, fame:名声
+全てのカード忠誠度設定,card_love <love>, love:忠誠度
+デッキのカード名声設定,card_fame_deck <fame> <arthur_type> <deck_index>, fame:名声。1～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て
+メインデッキのカード名声設定,card_fame_maindeck <fame> <arthur_type> <deck_index> <deckslot_index>, fame:名声。1～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て deckslot_index:0～9。-1以下or省略=全て
+サポートデッキのカード名声設定,card_fame_supportdeck <fame> <arthur_type> <deck_index> <deckslot_index>, fame:名声。1～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て deckslot_index:0～9。-1以下or省略=全て
+デッキのカード忠誠度設定,card_love_deck <love> <arthur_type> <deck_index>, love:忠誠度。0～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て
+メインデッキのカード忠誠度設定,card_love_maindeck <love> <arthur_type> <deck_index> <deckslot_index>, love:忠誠度。0～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て deckslot_index:0～9。-1以下or省略=全て
+サポートデッキのカード忠誠度設定,card_love_supportdeck <love> <arthur_type> <deck_index> <deckslot_index>, love:忠誠度。0～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て deckslot_index:0～9。-1以下or省略=全て
+指定アーサーのスフィア全取得,add_sphr_arthur <id>,id:0~4 無(全アーサー)、傭、富、盗、歌
+指定名称を含むスフィア全取得,add_sphr_name <name>,name:スフィア名称、指定無しならば全て
+スフィア詳細画面に表示中のスフィアを取得する,add_sphr_detail,※ガチャ画面など可
+聖杯スフィア全取得,add_sphr_chalice,
+指定名称を含むコスチューム全取得,add_costume_name <name>,name:コスチューム名称、指定無しならば全て
+指定名称を含むアバターパーツ全取得,add_avatarparts_name <name>,name:アバターパーツ名称、指定無しならば全て
+指定名称を含むシリーズのアバターパーツ全取得,add_series_name <name>,name:シリーズ名称、指定無しならば全て
+指定名称を含むアイテム全取得,add_item_name <name>,name:アイテム名称、指定無しならば全て
+セーブデータ削除,savedate_clear,
+アセットバンドル全ダウンロード,download_AssetsBundleAll,
+課金:未消化プロダクトの全消化,consume_all_product,
+課金:プロダクト完了処理の有効・無効,completion_process <Active>, Active:1 有効、0 無効
+課金:購入処理可能かどうか確認,store_process,
+課金:指定アイテムを購入できるかどうか確認,store_purchase <index>, index:課金アイテム番号(0～)
+カード所持数最大に（クリスタル必須）,cardmax,カード所持数増加処理を繰り返してるだけです
+PvPNPC戦 対戦相手をマイデッキに設定,pvpnpc_deck <arthur_type> <idx> <idx> <idx> <idx>,arthur_type:1~4 idx:0~2 傭兵富豪盗賊歌姫のデッキ番号
+PvPレース戦 レーティング変更,/setrating <rating> <idx>,rating:0~2 idx:0~（連勝数）
+PvPマニュアルモード,pvp_manual 1,1:on 0:off
+カードコレクション ページジャンプ,cardcl page <page>,page=1～(ページ)
+モーション再生(アバターカスタマイズシーンのみ使用可),anim <filename>,filename:"motion"フォルダ内のファイル名
+SmartBeatID取得,get_smartbeat_id,
+開催中イベントID表示,show_eventid,
+称号入手UI表示,open_gethonor,honor_id

@@ -1,0 +1,16 @@
+#対象,表示エフェクト名,エフェクト表示位置,バフタイプ,パラメータ,属性,
+NONE,ef_Btl_3D_DamageTrap00,TARGET,CARD_TRAP_DAMAGE,
+NONE,ef_Btl_3D_SkillHeal00_00,TARGET,HEAL,
+NONE,ef_Btl_3D_DamagePoison00_00,TARGET,POISON,
+NONE,ef_Btl_3D_DamageBurn00,TARGET,BURN,
+NONE,ef_Btl_3D_DamageFreeze00,TARGET,FREEZE,
+NONE,ef_Btl_3D_DamageBleed00,TARGET,BLEED,
+NONE,ef_Btl_3D_DamageElectric00,TARGET,ELECTRIC,
+NONE,ef_Btl_3D_DamageTrap00,TARGET,CARD_TRAP_DOT,
+NONE,ef_Btl_3D_GutsEffect00,ROOT,GUTS,
+
+
+
+
+
+

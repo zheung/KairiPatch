@@ -1,0 +1,142 @@
+#デバッグコマンド一覧
+#'#'でコメント行、','が区切り
+#コマンド名,コマンド,パラメータ説明
+#SVコマンド
+クエスト全クリア(メニューロック全解除),/clearquest ALL,
+全フロアクリア,/flag battle ALL 1,
+メインストーリー全クリア,/flag story_main ALL 1,
+サブストーリー全クリア,/flag story_sub ALL 1,
+デッキ追加2,/setstartdeck ALL 1,
+デッキ追加3,/setstartdeck ALL 2,
+探索ポイント追加,/addap 10,ap_add:AP
+クエストポイント追加,/addbp 100,bp_add:BP
+pvp用スタミナ全回復,/addpvpfull,
+ゴールド追加,/addgold 1000000,gold_add:ゴールド
+友情ポイント追加,/addfp 10000,fp_add:友情ポイント
+課金コイン追加,/addcoin 10000,coind_add:課金コイン
+経験値追加,/addexp 10000,exp_add:経験値
+レベル設定,/setlv 200,set_lv:レベル
+デイリーランキングスコアの更新,/ranking_daily 10000,score:スコア
+ログインボーナス再取得,/loginbonus_again,次の日のログインボーナスを取得
+ログインボーナス回数変更,/setloginbonus 0,ログインボーナス受け取り回数を変更して、再度受け取り
+初心者ログインボーナスID変更,/setloginbonus_beginnerid 1,初心者ログインボーナスIDを変更して、初日から受け取り
+チームバトル確認用敵鍵取得,/additem 3000 100,
+メンテ告知状態,/mainte 10,maite_sec:メンテ告知状態秒数
+メンテ告知状態解除,/maintereset,
+PvPレース戦 レーティング変更,/setrating 2 0,
+プレイログ使用履歴全削除,/deluseplayloghistory,
+
+#CLコマンド(BattleAPI)
+ユーザーのHP変更,!sethp 500,hp:HP
+ユーザーのHP全快,!medic,
+敵を倒す,!kill 0,index:番号(0～2)
+勝利,!win,
+敗北,!lose,
+覚醒,!awake 1,1:on 0:off
+無敵になる,!muteki 1,
+シャッフル設定,!shuffle 0,1:on 0:off
+NPCカードパス設定,!npc_pass 1,1:on 0:off
+
+#CLコマンド
+システム時間速度デフォルト,gamespeed 1.0,
+システム時間速度5倍,gamespeed 5.0,
+シーン変更,scene Title,name:シーン名
+BGM変更,bgm 1000001,id:BGMID(-1で再生停止)
+BGMマスター音量変更,bgm_vol 0.8,vol:音量(0.0～1.0)
+SE再生,se 1,id:SEID
+SEマスター音量変更,se_vol 0.8,vol:音量(0.0～1.0)
+ボイス再生,voice 1,id:ボイスID
+ボイスマスター音量変更,voice_vol 1.0,vol:音量(0.0～1.0)
+スクリプター実行,scr script/test,path:ファイルパス
+ストーリースクリプト実行,story_scr 10001 0,id:ID part:パート main:メインフラグ(未入力or0以外でメイン)
+NPCイベント実行(ストーリーバトル),npc_event 0 1100010100 1100010100,event_type:0=STORYBATTLE,1=MINISTORY_BATTLE,2=MINISTORY_STAGEQUEST script_name:スクリプト名 id:NPCイベントID
+NPCイベント実行(ミニストーリーバトル),npc_event 1 ministory 90000000,event_type:0=STORYBATTLE,1=MINISTORY_BATTLE,2=MINISTORY_STAGEQUEST script_name:スクリプト名 id:NPCイベントID
+NPCイベント実行(ミニストーリーバトル固有),npc_event 1 99000000/test -1,event_type:0=STORYBATTLE,1=MINISTORY_BATTLE,2=MINISTORY_STAGEQUEST script_name:スクリプト名 id:NPCイベントID
+NPCイベント実行(ミニストーリーステージ),npc_event 2 ministory 90001000,event_type:0=STORYBATTLE,1=MINISTORY_BATTLE,2=MINISTORY_STAGEQUEST script_name:スクリプト名 id:NPCイベントID
+NPCイベント実行(ミニストーリーステージ固有),npc_event 2 99100000/test -1,event_type:0=STORYBATTLE,1=MINISTORY_BATTLE,2=MINISTORY_STAGEQUEST script_name:スクリプト名 id:NPCイベントID
+アーサーデッキ追加,add_deck_arthur 1, id:1~4 傭、富、盗、歌
+指定アーサーのカード全取得,add_card_arthur 1 1 1 1 0, id:0~4 育、傭、富、盗、歌 num:数 lv:レベル fame:名声 love:忠誠度
+カード全取得,add_card_name,name:カード名称、指定無しならば全て
+全てのカードレベル1,card_lv 1, lv:レベル
+全てのカードレベル100,card_lv 100, lv:レベル
+全てのカード名声1,card_fame 1, fame:名声
+全てのカード名声100,card_fame 100, fame:名声
+全てのカード忠誠度0,card_love 0, love:忠誠度
+全てのカード忠誠度100,card_love 10000, love:忠誠度
+全デッキの全カード名声1,card_fame_deck 1, fame:名声。1～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て
+全デッキの全カード名声100,card_fame_deck 100, fame:名声。1～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て
+全メインデッキの全カード名声1,card_fame_maindeck 1, fame:名声。1～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て deckslot_index:0～9。-1以下or省略=全て
+全メインデッキの全カード名声100,card_fame_maindeck 100, fame:名声。1～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て deckslot_index:0～9。-1以下or省略=全て
+全サポートデッキの全カード名声1,card_fame_supportdeck 1, fame:名声。1～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て deckslot_index:0～9。-1以下or省略=全て
+全サポートデッキの全カード名声100,card_fame_supportdeck 100, fame:名声。1～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て deckslot_index:0～9。-1以下or省略=全て
+全デッキの全カード忠誠度0%,card_love_deck 0, love:忠誠度。0～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て
+全デッキの全カード忠誠度100%,card_love_deck 100, love:忠誠度。0～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て
+全メインデッキの全カード忠誠度0%,card_love_maindeck 0, love:忠誠度。0～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て deckslot_index:0～9。-1以下or省略=全て
+全メインデッキの全カード忠誠度100%,card_love_maindeck 100, love:忠誠度。0～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て deckslot_index:0～9。-1以下or省略=全て
+全サポートデッキの全カード忠誠度0%,card_love_supportdeck 0, love:忠誠度。0～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て deckslot_index:0～9。-1以下or省略=全て
+全サポートデッキの全カード忠誠度100%,card_love_supportdeck 100, love:忠誠度。0～ arthur_type:アーサータイプ。0以下or省略=全て deck_index:0～。-1以下or省略=全て deckslot_index:0～9。-1以下or省略=全て
+指定アーサーのスフィア全取得,add_sphr_arthur 0, id:0~4 無(全アーサー)、傭、富、盗、歌
+聖杯スフィア全取得,add_sphr_chalice,
+コスチューム全取得,add_costume_name,name:コスチューム名称、指定無しならば全て
+アバターパーツ全取得,add_avatarparts_name,name:アバターパーツ名称、指定無しならば全て
+シリーズのアバターパーツ全取得,add_series_name,name:シリーズ名称、指定無しならば全て
+セーブデータ削除,savedate_clear,
+アセットバンドル全ダウンロード,download_AssetsBundleAll,
+バトル強制2D切り替え,force_battle_2d 1, change:1 強制ON、0 強制OFF
+PvPNPC戦 対戦相手をマイデッキに設定,pvpnpc_deck 1 0 0 0 0,arthur_type:1~4 idx:0~2 傭兵富豪盗賊歌姫のデッキ番号
+PvPマニュアルモード,pvp_manual 1,1:on 0:off null:switch on/off
+シャッフル設定,shuffle 0,1:on 0:off
+NPCカードパス設定,npc_pass 1,1:on 0:off
+SetHP1設定,sethp1 11111111,0:無効 1:有効 11111111:全員 11110000:アーサー全員 00001111:敵全員
+libbattleデバッグログ出力設定,debug_print 1,1:on 0:off
+タイマー更新停止設定,stop_timer 1,1:on 0:off
+カード所持数最大に,cardmax,/addcardextend 9999を呼び出してるだけです
+開催中イベントID表示,show_eventid,
+称号入手UI表示,open_gethonor,honor_id
+Webページオープン(社内テストページ),web http://192.168.4.8:8080/test.html,url:URL
+Webページオープン(お知らせページ),web http://www.kairisei-ma.jp/,url:URL
+Webページオープン(お知らせページ：メンテナンス表示),web http://www.kairisei-ma.jp/?maintenance=true,url:URL
+Webページオープン(お知らせページ：招待表示),web http://www.kairisei-ma.jp/?invite=true,url:URL
+Webページオープン(お知らせページ：ポイントショップ),web http://www.kairisei-ma.jp/point_shop.html,url:URL
+WebページJS呼び出し,evaluateJS <js>,js:JavaScriptコード
+現シーン内の全GameObject列挙,obj_grep 1,0=名称のみ 0以外=詳細出力
+現シーン内の全AtlasSettings列挙,atlas_grep,
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0010_run,「通常走り」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0020_dash,「高速走り」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0030_brake,「ブレーキ」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0040_start_run,「通常走り始め」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0100_wait,「待機」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0110_step_back,「バックステップ」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0111_step_in,「ステップイン」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0120_card_attack,「カード攻撃」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0200_damage1,「ダメージ　上」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0210_damage2,「ダメージ　下」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0220_down,「ダウン（崩れ落ち）」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0230_down_loop,「ダウン（崩れ落ち）ループ」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0240_revival,「復活」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0250_death,「死亡」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0251_death_loop,「死亡ループ」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0260_win,「勝利」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0261_win_loop,「勝利ループ」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0300_buff_skill_0,「バフ・回復スキル開始」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0301_buff_skill_1,「バフ・回復スキル維持」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0302_buff_skill_2,「バフ・回復スキル終了」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0310_debuff_skill_0,「デバフスキル開始」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0311_debuff_skill_1,「デバフスキル維持」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0312_debuff_skill_2,「デバフスキル終了」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0340_fire_skill_0,「スキル開始」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0341_fire_skill_1,「スキル維持」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0342_fire_skill_2,「スキル終了」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0520_sp_recovery_skill_0,「SP回復スキル」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0530_sp_slash_skill,「SPスラッシュスキル」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0540_sp_fire_skill_0,「SP火スキル開始」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0541_sp_fire_skill_1,「SP火スキル終了」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0550_sp_ice_skill_0,「SP氷スキル開始」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0551_sp_ice_skill_1,「SP氷スキル終了」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0560_sp_wind_skill_0,「SP風スキル開始」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0561_sp_wind_skill_1,「SP風スキル終了」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_0700_excalibur_0,「エクスカリバー」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_1000_pvp_Attack00,「PVP攻撃」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_1000_pvp_buff00,「PVPバフ」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_1000_pvp_Ready00,「PVP攻撃準備」
+(アバターカスタマイズシーンのみ使用可)モーション再生,anim mot_1000_pvp_Win00,「PVP勝利」

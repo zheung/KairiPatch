@@ -57,6 +57,7 @@ NPCイベント実行(ミニストーリーステージ固有),npc_event 2 99100
 アーサーデッキ追加,add_deck_arthur 1, id:1~4 傭、富、盗、歌
 指定アーサーのカード全取得,add_card_arthur 1 1 1 1 0, id:0~4 育、傭、富、盗、歌 num:数 lv:レベル fame:名声 love:忠誠度
 カード全取得,add_card_name,name:カード名称、指定無しならば全て
+指定最大Lvの未入手カード全取得,add_card_lvmax 80 1 1 1 0, maxlv:最大lv num:数 lv:レベル fame:名声 love:忠誠度
 全てのカードレベル1,card_lv 1, lv:レベル
 全てのカードレベル100,card_lv 100, lv:レベル
 全てのカード名声1,card_fame 1, fame:名声
