@@ -24,9 +24,4 @@ for(let a of arr) {
 	brr.push(a.replace(/\,\d+$/, `,${start+set.size}`));
 }
 
-for(let id of set) {
-	v.push(`<bundle_ver>, card/ext/card_${id}_ext.dat, 0, XXXXXXXX`);
-}
-
-fs.writeFileSync('patch/version-ext.txt', v.join('\n'));
 fs.writeFileSync('patch/catalog-ext.txt', brr.join('\n'));
