@@ -47,6 +47,10 @@ for(let line of arrc) {
 	let id = (name.match(/\d+/) || [])[0];
 
 	arrv.push(`<bundle_ver>, card/ext/card_${id}_ext.dat, 0, ${data[2]}`);
+	try {
+		fs.renameSync(`patch/card/ext/card_${id}_ext.dat`, `patch/card/ext/card_${id}_ext.dat.new`);
+	}
+	catch(e) { true; }
 }
 
 let dir = '';
