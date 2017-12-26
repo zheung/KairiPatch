@@ -3,6 +3,7 @@
 修改:
 files/patch/main_c/container.dat ->
 	card.csv
+		美食型卡牌注释，在对应下方复制素晴等位卡，然后替换开头4ID,技能ID,添加分组
 	skill.csv
 
 	BOSS替换:

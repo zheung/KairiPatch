@@ -77,6 +77,7 @@ WebページJS呼び出し,evaluateJS <js>,js:JavaScriptコード
 指定スキル機能のカード全取得,add_card_skill_role <id>,id=スキル機能ID
 指定レアリティのカード全取得,add_card_rarity <rarity>,rarity=カードレアリティ NORMAL(1)～MILLIONRARE(6)
 カード詳細画面に表示中のカードを取得する,add_card_detail,※カードコレクションやガチャ画面など可
+指定最大Lvの未入手カード全取得,add_card_lvmax <maxlv> [<num>] [<lv>] [<fame>] [<love>]
 全てのカードレベル設定,card_lv <lv>, lv:レベル
 全てのカード名声設定,card_fame <fame>, fame:名声
 全てのカード忠誠度設定,card_love <love>, love:忠誠度
