@@ -1,5 +1,5 @@
 @echo off
 
-del container.dat
+del ..\..\patch\main_c\container.dat
 D:\Krsma\tool\ma43\MAencode43.exe container.unity3d
-ren container.uni.crack container.dat
+move container.uni.crack ..\..\patch\main_c\container.dat
