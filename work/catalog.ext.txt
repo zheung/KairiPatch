@@ -1,3 +1,4 @@
+<c>,-------国服动态MMR补全-------
 <b>,card/ext/card_10001034_ext.dat,98545211,B41351A4,1153330,A,-1,0,1
 <b>,card/ext/card_10125045_ext.dat,A27BBE38,7B7CF679,1201192,A,-1,0,1
 <b>,card/ext/card_10129030_ext.dat,459CA5ED,C7112E89,1926212,A,-1,0,1

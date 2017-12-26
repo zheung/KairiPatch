@@ -1,3 +1,4 @@
+<c>,-------素晴联动卡-------
 <b>,card/icon/10/171/card_10171000_icon.dat,48BF8DEF,22BCC5C4,112137,N,2,0,1
 <b>,card/icon/10/171/card_10171020_icon.dat,B1FD66B2,9585221F,145501,N,2,0,1
 <b>,card/icon/10/171/card_10171010_icon.dat,109C6EDA,5DC34367,59211,N,2,0,1
