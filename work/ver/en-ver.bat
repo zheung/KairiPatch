@@ -1,5 +1,5 @@
 @echo off
 
-del version.dat
+del ..\..\patch\version.dat
 D:\Krsma\tool\ma43\MAencode43.exe version.unity3d
-ren version.uni.crack version.dat
+move version.uni.crack ..\..\patch\version.dat

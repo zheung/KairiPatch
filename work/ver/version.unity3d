@@ -1,4 +1,8 @@
 <version>, 678
+<bundle_ver>, main_c/chr/chr_avt_390_mdl.dat, 0, 29FAF1F1
+<bundle_ver>, main_c/chr/chr_avt_390_img.dat, 0, C7E84C5E
+<bundle_ver>, main_c/chr/chr_avt_390_txt.dat, 0, 7BE71E7E
+<bundle_ver>, main_n/chr/chr_avt_390_anm.dat, 0, 45EB85B7
 <bundle_ver>, card/icon/10/171/card_10171000_icon.dat, 0, 48BF8DEF
 <bundle_ver>, card/icon/10/171/card_10171020_icon.dat, 0, B1FD66B2
 <bundle_ver>, card/icon/10/171/card_10171010_icon.dat, 0, 109C6EDA
