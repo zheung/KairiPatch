@@ -1,0 +1,11 @@
+替换文件列表（供文件备份参考）
+patch\version.dat
+patch\main_c\container.dat
+
+CPK\cv_arthur_001.cpk
+CPK\cv_arthur_002.cpk
+CPK\cv_arthur_003.cpk
+CPK\cv_arthur_004.cpk
+
+CPK\mov_16000130.cpk
+CPK\mov_16000300.cpk
