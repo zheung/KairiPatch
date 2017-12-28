@@ -1,7 +1,7 @@
 let fs = require('fs');
 
-let jp = fs.readFileSync('work/ref/catalog.jp.dat', 'utf-8');
-let cn = fs.readFileSync('work/ref/catalog.cn.dat', 'utf-8');
+let jp = fs.readFileSync('work/cat/catalog.jp.dat', 'utf-8');
+let cn = fs.readFileSync('work/cat/catalog.cn.dat', 'utf-8');
 let jpl = jp.split('\n');
 let cnl = cn.split('\r\n');
 
@@ -70,5 +70,5 @@ for(let line of jpl) {
 	}
 }
 
-fs.writeFileSync('work/catalog.ext.txt', arrc.join('\n'));
-fs.writeFileSync('work/version.ext.unity3d', arrv.join('\n'));
+fs.writeFileSync('work/cat/catalog.ext.jp.txt', arrc.join('\n'));
+fs.writeFileSync('work/ver/version.ext.jp.unity3d', arrv.join('\n'));
