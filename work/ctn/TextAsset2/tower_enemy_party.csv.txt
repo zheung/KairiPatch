@@ -1,4 +1,0 @@
-#,共通,敵1,,,敵2,,,敵3,,,敵4,,,BGM,背景,ヒント,
-#,配置データ名,enemyid,HP倍率,親番号,enemyid,HP倍率,親番号,enemyid,HP倍率,親番号,enemyid,HP倍率,親番号,BGMID,背景ID,ヒントID,
-
-
