@@ -1,6 +1,7 @@
 替换文件列表（供文件备份参考）
 patch\version.dat
 patch\main_c\container.dat
+patch\main_c\image\image_sphere.dat
 
 CPK\cv_arthur_001.cpk
 CPK\cv_arthur_002.cpk
