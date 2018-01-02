@@ -45,3 +45,37 @@ o// PatchSystem.onRecv_PatchList
 	{
 		File.Delete(updatePatchFilePath);
 	}
+	
+// AutoFusionRsultExecutor.onCloseFusionReusltWindow
+	if (flag && flag2)
+	{
+		play_type = CardFusionResult.PlayType.ALL;
+	}
+	else if (flag)
+	{
+		play_type = CardFusionResult.PlayType.ALL;
+	}
+	else if (flag2)
+	{
+		play_type = CardFusionResult.PlayType.ALL;
+	}
+	
+// ExpFusionResultUIController
+	// if (!ArrayUtility.isNullOrEmpty(this.m_receive_data.result_card.fame_up) && this.m_receive_data.result_card.fame_up[0].new_fame >= Const.CARD_FAME_MAX)
+	// {
+		this.m_fusion_result_window.startEffect(CardFusionResult.PlayType.ALL, this.m_receive_data.result_card, this.m_receive_data.back_uniqids != null || this.m_receive_data.back_container_uniqids != null || this.m_receive_data.back_stack_cards != null, new Action<CardFusionResult.StateType>(this.onStateEnd), delegate
+		{
+			this.<is_end_effect>__0 = true;
+		});
+	// }
+	// else
+	// {
+	// 	this.openFameUpWindow();
+	// 	this.m_fusion_result_window.startEffect(CardFusionResult.PlayType.FUSION, this.m_receive_data.result_card, this.m_receive_data.back_uniqids != null || this.m_receive_data.back_container_uniqids != null || this.m_receive_data.back_stack_cards != null, null, delegate
+	// 	{
+	// 		this.<is_end_effect>__0 = true;
+	// 	});
+	// }
+	
+// LoginMgr.onLogin(SDK)
+	System.IO.File.WriteAllText(FileLoader.INSTALL_DIR+"login.txt", jsonstr);
