@@ -1,5 +1,3 @@
-0 O版 1 D版 2 Q版
-
 修改:
 files/patch/main_c/container.dat ->
 卡牌数据:
@@ -8,9 +6,11 @@ files/patch/main_c/container.dat ->
 	skill.csv
 		美食型卡牌注释，在对应下方复制素晴等位卡，然后替换4ID
 变身:
-	costume.csv.txt
+	costume.csv
 		惠惠和斋藤一的ID注释互换
 召唤石:
+	sphr.csv
+		名称修改
 
 BOSS:
 	enemy.csv
@@ -29,5 +29,3 @@ files/CPK
 files/patch/main_c/chr
 	chr_ems_03401_mdl.dat
 	chr_ems_03401_txt.dat
-
-
