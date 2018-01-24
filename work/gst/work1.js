@@ -2,6 +2,7 @@ let fs = require('fs');
 
 let jp = fs.readFileSync('work/cat/catalog.jp.dat', 'utf-8');
 let cn = fs.readFileSync('work/cat/catalog.cn.dat', 'utf-8');
+
 let jpl = jp.split('\n');
 let cnl = cn.split('\r\n');
 
@@ -22,7 +23,7 @@ for(let line of jpl) {
 	}
 }
 
-console.log(Object.keys(dict).length);
+console.log(`MMR-JP: ${Object.keys(dict).length}`);
 
 for(let line of cnl) {
 	if(!line) continue;
@@ -39,7 +40,7 @@ for(let line of cnl) {
 
 let arrc = Object.values(dict);
 
-console.log(arrc.length);
+console.log(`MMR-CN-MISS: ${arrc.length}`);
 
 for(let line of arrc) {
 	let data = line.split(',');
@@ -48,9 +49,9 @@ for(let line of arrc) {
 
 	arrv.push(`<bundle_ver>, card/ext/card_${id}_ext.dat, 0, ${data[2]}`);
 	try {
-		fs.renameSync(`patch/card/ext/card_${id}_ext.dat`, `patch/card/ext/card_${id}_ext.dat.new`);
+		fs.renameSync(`files/patch/card/ext/card_${id}_ext.dat`, `files/patch/card/ext/card_${id}_ext.dat.new`);
 	}
-	catch(e) { true; }
+	catch(e) { console.log(id); }
 }
 
 let dir = '';
